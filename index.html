@@ -18,26 +18,30 @@
       padding: 1rem;
       text-align: center;
     }
-    header nav ul {
+    nav {
+      margin: 1rem auto;
+      max-width: 700px;
+    }
+    nav ul {
       list-style: none;
       padding: 0;
-      margin: 1rem 0;
+      margin: 0;
       display: flex;
-      justify-content: center;
+      flex-direction: row;
       flex-wrap: wrap;
+      gap: 0.5rem;
     }
-    header nav ul li {
-      margin: 0 0.5rem;
-    }
-    header nav ul li a {
+    nav a {
       color: #fff;
       text-decoration: none;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1rem;
       border-radius: 4px;
       background: #444;
+      display: block;
+      text-align: center;
     }
-    header nav ul li a.active,
-    header nav ul li a:hover {
+    nav a.active,
+    nav a:hover {
       background: #666;
     }
     iframe {
@@ -53,79 +57,98 @@
       border-radius: 8px;
       min-height: 400px;
     }
-    .section { display: none; }
-    .section.active { display: block; }
-    h2 { margin-top: 0; }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+      column-count: 2;
+      column-gap: 2rem;
+      -webkit-column-gap: 2rem;
+      -moz-column-gap: 2rem;
+    }
+    .section.active * {
+      break-inside: avoid-column;
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+    }
+    h2 {
+      margin-top: 0;
+    }
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9em;
       color: #777;
     }
+    @media (max-width: 600px) {
+      nav { max-width: 100%; padding: 0 1rem; }
+      nav a { font-size: 0.9rem; }
+      .section.active { column-count: 1; }
+    }
   </style>
+
+
 </head>
 <body>
 
-  <header>
-    <h1>In Loving Memory of Dr. Parviz Mohammad Sabour</h1>
-    <nav>
-      <ul>
-        <li><a href="#" data-section="azadeh">Azadeh Sabour</a></li>
-        <li><a href="#" data-section="fiona">Fiona McKean</a></li>
-        <li><a href="#" data-section="poetry">Poetry Reading</a></li>
-        <li><a href="#" data-section="lucie">Dean Lucie Thibault</a></li>
-        <li><a href="#" data-section="kropinski">Dr. Andrew Kropinski</a></li>
-        <li><a href="#" data-section="greg">Dr. Greg German</a></li>
-        <li><a href="#" data-section="krista">Dr. Krista Power</a></li>
-        <li><a href="#" data-section="roya">Dr. Roya Riazi</a></li>
-        <li><a href="#" data-section="susan">Dr. Susan Tosh</a></li>
-        <li><a href="#" data-section="mehran">Mehran Mohaghegh</a></li>
-        <li><a href="#" data-section="shohr">Shohre Mahdi</a></li>
-        <li><a href="#" data-section="camron">Camron Sabour</a></li>
-        <li><a href="#" data-section="societies">Iranian Scientific Societies</a></li>
-
-      </ul>
-    </nav>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/IilY6NYCCBg" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-  </header>
-
+    <header>
+        <h1>In Loving Memory of Dr. Parviz Mohammad Sabour</h1>
+        <nav>
+          <ul>
+            <li><a href="#" data-section="azadeh">Azadeh Sabour</a></li>
+            <li><a href="#" data-section="fiona">Fiona McKean</a></li>
+            <li><a href="#" data-section="camron">Camron Sabour</a></li>
+            <li><a href="#" data-section="poetry">Poetry Reading</a></li>
+            <li><a href="#" data-section="societies">Iranian Scientific Societies</a></li>
+            <li><a href="#" data-section="lucie">Dean Lucie Thibault</a></li>
+            <li><a href="#" data-section="kropinski">Dr. Andrew Kropinski</a></li>
+            <li><a href="#" data-section="greg">Dr. Greg German</a></li>
+            <li><a href="#" data-section="krista">Dr. Krista Power</a></li>
+            <li><a href="#" data-section="roya">Dr. Roya Riazi</a></li>
+            <li><a href="#" data-section="susan">Dr. Susan Tosh</a></li>
+            <li><a href="#" data-section="mehran">Mehran Mohaghegh</a></li>
+            <li><a href="#" data-section="shohr">Shohre Mahdi</a></li>
+          </ul>
+        </nav>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IilY6NYCCBg" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+      </header>
   <div class="content">
 
- <div class="section" id="kropinski">
+    <div class="section" id="kropinski">
     <h2>Tribute by Dr. Andrew M. Kropinski</h2>
-    <pre style="white-space: pre-wrap;">We are deeply saddened by the news of Parviz's death.  The phage world has lost an important scientist, leader, and mentor.  And those who knew him personally are grieving the loss of a ceaselessly curious, kind, generous, amusing, and inspiring friend. 
+    <p>We are deeply saddened by the news of Parviz's death.  The phage world has lost an important scientist, leader, and mentor.  And those who knew him personally are grieving the loss of a ceaselessly curious, kind, generous, amusing, and inspiring friend. 
 
-My professional relationship with Parviz began in 2004, when my wife, Peggy Pritchard, and I moved to Guelph.  I had taken up a senior scientist position in the Laboratory for Foodborne Zoonoses, which was directly across the street from Parviz's laboratory at Agriculture and Agrifood Canada's Guelph Research and Development Centre.  While serving on the same supervisory committees for graduate students from the University of Guelph, we quickly recognized that we shared a common passion for science, and commitment to mentoring the next generation of scientists. He was very adaptable, a novel thinker, and delightfully easy to work with.  Our research collaborations resulted in the publication of scientific papers and chapters in each other’s book projects.  In addition, we both attended Betty Kutter’s biennial Evergreen Phage Biology meetings, and the Viruses of Microbes conferences.  Our last conference together was in Guimarães, Portugal, in 2022.
+        <p>My professional relationship with Parviz began in 2004, when my wife, Peggy Pritchard, and I moved to Guelph.  I had taken up a senior scientist position in the Laboratory for Foodborne Zoonoses, which was directly across the street from Parviz's laboratory at Agriculture and Agrifood Canada's Guelph Research and Development Centre.  While serving on the same supervisory committees for graduate students from the University of Guelph, we quickly recognized that we shared a common passion for science, and commitment to mentoring the next generation of scientists. He was very adaptable, a novel thinker, and delightfully easy to work with.  Our research collaborations resulted in the publication of scientific papers and chapters in each other’s book projects.  In addition, we both attended Betty Kutter’s biennial Evergreen Phage Biology meetings, and the Viruses of Microbes conferences.  Our last conference together was in Guimarães, Portugal, in 2022.
 
-Behind the scenes, Parviz was a discrete and respected confidante of philanthropists. His most recent consultations resulted in the establishment of a Professorship in Bacteriophage Therapy Research & Innovation at the University of Toronto, and support for The Félix d'Hérelle Reference Center for Bacterial Viruses at L'Université Laval.  These two initiatives have immeasurably strengthen applied phage research in Canada.
+            <p> Behind the scenes, Parviz was a discrete and respected confidante of philanthropists. His most recent consultations resulted in the establishment of a Professorship in Bacteriophage Therapy Research & Innovation at the University of Toronto, and support for The Félix d'Hérelle Reference Center for Bacterial Viruses at L'Université Laval.  These two initiatives have immeasurably strengthen applied phage research in Canada.
 
-Parviz was a gracious host with old world charm, whose generous hospitality was extended to students and colleagues alike.  Peggy and I still recall our first visit to his comfortably furnished and decorated home.  His delicious meal included ingredients from his own garden, and our far-ranging conversation was refreshingly engaging. Thanks to Parviz, Peggy and I have a modest collection of hand-woven carpets, and an enviable amount of Iranian saffron!
+                <p>Parviz was a gracious host with old world charm, whose generous hospitality was extended to students and colleagues alike.  Peggy and I still recall our first visit to his comfortably furnished and decorated home.  His delicious meal included ingredients from his own garden, and our far-ranging conversation was refreshingly engaging. Thanks to Parviz, Peggy and I have a modest collection of hand-woven carpets, and an enviable amount of Iranian saffron!
 
-A few years ago, Peggy began a PhD in Population Medicine at the Ontario Veterinary College.  Parviz's delight and support meant a the world to her.  She was looking forward to him attending her graduation.
+                    <p> A few years ago, Peggy began a PhD in Population Medicine at the Ontario Veterinary College.  Parviz's delight and support meant a the world to her.  She was looking forward to him attending her graduation.
 
-The consummate teacher and story-teller, Parviz spoke knowledgeably about a wide range of subjects from phage therapy and epigenetics to Persian poets.  As I came to know Parviz better, and learn more about his life, I was in awe of what he experienced and achieved.  He had lived an unbelievably full life--scientifically and personally--and I was convinced that he either started graduate school at the age of five, or was 110 when he retired!
+                        <p>The consummate teacher and story-teller, Parviz spoke knowledgeably about a wide range of subjects from phage therapy and epigenetics to Persian poets.  As I came to know Parviz better, and learn more about his life, I was in awe of what he experienced and achieved.  He had lived an unbelievably full life--scientifically and personally--and I was convinced that he either started graduate school at the age of five, or was 110 when he retired!
 
-It felt as though our dear friend could live forever but, sadly, not so.  We are sorry we didn't have the opportunity to wish you a "Happy Nowruz!" this year, Parviz.
+                            <p>It felt as though our dear friend could live forever but, sadly, not so.  We are sorry we didn't have the opportunity to wish you a "Happy Nowruz!" this year, Parviz.
 
 
 
-Andrew M. Kropinski, PhD
-Emeritus Professor, Microbiology & Immunology, Queen's University
-Adjunct Professor, Pathobiology, Ontario Veterinary College, University of Guelph
-Academician, Georgian National Academy of Sciences
+                               
+                                <p>Andrew M. Kropinski, PhD<br>
+                                    Emeritus Professor, Microbiology & Immunology, Queen's University<br>
+                                    Adjunct Professor, Pathobiology, Ontario Veterinary College, University of Guelph<br>
+                                    Academician, Georgian National Academy of Sciences<br>
+                                    Fellow, American Academy of Microbiology<br>
+                                    Actinobacteriophages Study Group Chair, Bacterial Viruses Subcommittee, ICTV<br>
+                                    NCBI Viral Genome Advisor<br>
+                                    URL: Online Analysis Tools - <a href="https://molbiol-tools.ca/">https://molbiol-tools.ca/</a><br>
+                                    Email: Phage.Canada@gmail.com
+                                </p>
 
-Fellow, American Academy of Microbiology
+                                
+    </div>
 
-Actinobacteriophages Study Group Chair, Bacterial Viruses Subcommittee, ICTV
-
-NCBI Viral Genome Advisor
-
-URL: Online Analysis Tools - https://molbiol-tools.ca/
-Email Phage.Canada@gmail.com
-    </pre>
-  </div>
-
-  <div class="section" id="societies">
+    <div class="section" id="societies">
     <h2>Tribute from 3 Iranian Scientific Societies</h2>
     <blockquote>
   “Unfortunately, the Iranian-Canadian scientific and cultural community has lost one of its scientific honors”
@@ -212,9 +235,8 @@ Email Phage.Canada@gmail.com
       </blockquote>
       Fiona
     </div>
-
        
-<div class="section" id="poetry">
+    <div class="section" id="poetry">
   <h2>Poetry Reading by Sepand Siassi &amp; Meghan Hanley</h2>
   <h3>Introduction to Persian Poetry</h3>
 
@@ -259,11 +281,9 @@ Email Phage.Canada@gmail.com
 
   <p>We close with a modern interpretation inspired by Ferdowsi—author of the 11th-century epic <em>Shahnameh</em> (“The Book of Kings”). Though not a literal translation, this poem echoes Ferdowsi’s themes of legacy, honour, and the enduring power of a good name.</p>
   <p><em>[Read modern Ferdowsi-inspired poem here]</em></p>
-</div>
-
     </div>
 
-  <div class="section" id="lucie">
+    <div class="section" id="lucie">
 
   <h2>Speech by Dean Lucie Thibault</h2>
   <h3>University of Ottawa: Nutrition Sciences &amp; Gut Microbiome</h3>
@@ -286,8 +306,7 @@ Email Phage.Canada@gmail.com
   </ul>
 
   <p>These awards are a fitting tribute to Parviz—a man of science who was always curious, always learning, and always caring for his students. His legacy will live on through every student these scholarships support.</p>
-</div>
-
+    </div>
 
     <div class="section" id="greg">
       <h2>Speech by Dr. Greg German</h2>
@@ -329,7 +348,6 @@ Email Phage.Canada@gmail.com
 
     <div class="section" id="krista">
       <h2>Speech by Dr. Krista Power</h2>
-      <h2>Speech by Dr. Krista Power</h2>
   <h3>Mentorship &amp; Scientific Collaboration</h3>
 
   <p>Hello everyone. My name is <strong>Dr. Krista Power</strong>, and I’m honoured to speak alongside Dean Lucie Thibault of uOttawa’s Faculty of Health Sciences.</p>
@@ -352,8 +370,7 @@ Email Phage.Canada@gmail.com
   <p>In March of this year, Parviz joined us for Nutrition Research Day at uOttawa. He toured our new facilities with genuine excitement, engaged students with thoughtful questions, and left everyone smiling. His enthusiasm for science and his care for students remain an inspiration.</p>
 
   <p>Parviz will be deeply missed by me and by so many whose lives and work he touched. His legacy lives on through the researchers he mentored, the programs he helped build, and the curiosity he ignited in all of us.</p>
-</div>
-    
+    </div>
 
     <div class="section" id="roya">
       <h2>Speech by Dr. Roya Riazi</h2>
@@ -421,193 +438,227 @@ Email Phage.Canada@gmail.com
   Former Research Scientist, Agriculture &amp; Agri-Food Canada’s Guelph Food Research Centre</p>
     </div>
 
-<div class="section" id="mehran">
-  <h2>Speech by Mehran Mohaghegh</h2>
-  <h3>Condolences from the Mohandes Association</h3>
+    <div class="section" id="mehran">
+    <h2>Speech by Mehran Mohaghegh</h2>
+    <h3>Condolences from the Mohandes Association</h3>
 
-  <p>My name is <strong>Mehran Mohaghegh</strong>. As a board member of the Association of Iranian Engineers and Architects in Canada (the Mohandes Association), I extend our deepest condolences for the loss of our close friend and esteemed colleague, Professor Parviz Sabour.</p>
+    <p>My name is <strong>Mehran Mohaghegh</strong>. As a board member of the Association of Iranian Engineers and Architects in Canada (the Mohandes Association), I extend our deepest condolences for the loss of our close friend and esteemed colleague, Professor Parviz Sabour.</p>
 
-  <p>His passing is a profound sorrow for all of us. Professor Sabour was a tireless educator, a brilliant researcher, an innovator, and a deeply committed member of our community.</p>
+    <p>His passing is a profound sorrow for all of us. Professor Sabour was a tireless educator, a brilliant researcher, an innovator, and a deeply committed member of our community.</p>
 
-  <p>While words cannot ease the pain of his family and friends, please know we stand with you during this difficult time. Though Professor Sabour has departed from this world, his spirit and legacy remain ever-present in our hearts.</p>
+    <p>While words cannot ease the pain of his family and friends, please know we stand with you during this difficult time. Though Professor Sabour has departed from this world, his spirit and legacy remain ever-present in our hearts.</p>
 
-  <p>The loss of Professor Parviz Sabour—a distinguished university professor and genetic scientist—has plunged us into deep mourning. All who knew him will testify to not only his scientific brilliance and unparalleled wisdom but also to his purity of heart and inner beauty. The Mohandes Association extends its condolences to friends, relatives, and the Iranian scientific community at home and abroad; we share in your grief.</p>
+    <p>The loss of Professor Parviz Sabour—a distinguished university professor and genetic scientist—has plunged us into deep mourning. All who knew him will testify to not only his scientific brilliance and unparalleled wisdom but also to his purity of heart and inner beauty. The Mohandes Association extends its condolences to friends, relatives, and the Iranian scientific community at home and abroad; we share in your grief.</p>
 
-  <h4>Ferdowsi’s Reflection on Life</h4>
-  <blockquote>
-    <p>هر آن کس که ز مادر زاد است بمرد<br>
-       ز دست اجل هیچ کس جان نبرد</p>
-  </blockquote>
+    <h4>Ferdowsi’s Reflection on Life</h4>
+    <blockquote>
+        <p>هر آن کس که ز مادر زاد است بمرد<br>
+        ز دست اجل هیچ کس جان نبرد</p>
+    </blockquote>
 
-  <p>Though Parviz is no longer among us, he lives on in our souls and minds through countless memories and legacies.</p>
+    <p>Though Parviz is no longer among us, he lives on in our souls and minds through countless memories and legacies.</p>
 
-  <p>As Ferdowsi reminds us, only one’s record remains—and Dr. Sabour’s record in science and humanity is exceptionally honorable. His name is inscribed with dignity in the chronicle of history.</p>
+    <p>As Ferdowsi reminds us, only one’s record remains—and Dr. Sabour’s record in science and humanity is exceptionally honorable. His name is inscribed with dignity in the chronicle of history.</p>
 
-  <h4>Words of Khwaja Shiraz</h4>
-  <blockquote>
-    <p>بر این رواق پرچین نوشته‌اند به زر<br>
-       که جز نیکی اهل کرم نخواهد ماند</p>
-  </blockquote>
+    <h4>Words of Khwaja Shiraz</h4>
+    <blockquote>
+        <p>بر این رواق پرچین نوشته‌اند به زر<br>
+        که جز نیکی اهل کرم نخواهد ماند</p>
+    </blockquote>
 
-  <h4>Persian Verse</h4>
-  <blockquote>
-    <p>گلچین روزگار عجب خوش سلیقه است<br>
-       می‌چیند آن گلی که به عالم نمونه است</p>
-  </blockquote>
+    <h4>Persian Verse</h4>
+    <blockquote>
+        <p>گلچین روزگار عجب خوش سلیقه است<br>
+        می‌چیند آن گلی که به عالم نمونه است</p>
+    </blockquote>
 
-  <blockquote>
-    <p>در گذشت پروفسور پرویز صبور استاد برجسته دانشگاه و دانشمند علم ژنتیک، همه ما را در ماتمی عمیق فرو برد. همه کسانی که از نزدیک با او آشنا بودند علاوه بر شخصیت علمی و فرزانگی بی‌بدیل او، بر پاک‌دلی و صفای باطن او نیز شهادت خواهند داد. کانون مهندس در گذشت این استاد برجسته، که به‌حق یکی از مفاخر علمی ما ایرانیان خارج‌کشور بود، به همه دوستان، آشنایان، و جامعه علمی ایرانیان داخل و خارج کشور تسلیت می‌گوید و خود را در این سوگ شریک می‌داند.</p>
-  </blockquote>
+    <blockquote>
+        <p>در گذشت پروفسور پرویز صبور استاد برجسته دانشگاه و دانشمند علم ژنتیک، همه ما را در ماتمی عمیق فرو برد. همه کسانی که از نزدیک با او آشنا بودند علاوه بر شخصیت علمی و فرزانگی بی‌بدیل او، بر پاک‌دلی و صفای باطن او نیز شهادت خواهند داد. کانون مهندس در گذشت این استاد برجسته، که به‌حق یکی از مفاخر علمی ما ایرانیان خارج‌کشور بود، به همه دوستان، آشنایان، و جامعه علمی ایرانیان داخل و خارج کشور تسلیت می‌گوید و خود را در این سوگ شریک می‌داند.</p>
+    </blockquote>
 
-  <p><strong>Mehran Mohaghegh</strong><br>
-     Board Member, Mohandes Association</p>
-</div>
+    <p><strong>Mehran Mohaghegh</strong><br>
+        Board Member, Mohandes Association</p>
+    </div>
 
- <div class="section" id="camron">
-  <h2>Eulogy by Camron Sabour</h2>
-  <h3>Eulogy for Dad — Speaking Notes</h3>
+    <div class="section" id="camron">
+    <h2>Eulogy by Camron Sabour</h2>
+    <h3>Eulogy for Dad — Speaking Notes</h3>
 
-  <p>Dad was known for his zest for life, his hard work, his compassion, and his commitment to his friends and family.</p>
+    <p>Dad was known for his zest for life, his hard work, his compassion, and his commitment to his friends and family.</p>
 
-  <p>In a few minutes, I won't be able to represent the totality of his life, but I will share some stories and visceral memories of my dad.</p>
+    <p>In a few minutes, I won't be able to represent the totality of his life, but I will share some stories and visceral memories of my dad.</p>
 
-  <p>To teach me hard work, he told me about his life — how he came on a boat to Utah from Iran.</p>
+    <p>To teach me hard work, he told me about his life — how he came on a boat to Utah from Iran.</p>
 
-  <p>Before leaving Iran, many friends and family gave him money for his travels and tuition. Those people are the enablers of his life, and for that, I am eternally grateful — for giving Dad a chance — his big shot in the Western world.</p>
+    <p>Before leaving Iran, many friends and family gave him money for his travels and tuition. Those people are the enablers of his life, and for that, I am eternally grateful — for giving Dad a chance — his big shot in the Western world.</p>
 
-  <p>That being said, Dad being Dad, he wasn't particularly great at managing his funds. He told me he spent too much of his money on gifts for people in America.</p>
+    <p>That being said, Dad being Dad, he wasn't particularly great at managing his funds. He told me he spent too much of his money on gifts for people in America.</p>
 
-  <p>By the time he finally arrived at the University of Utah, his money had gotten so low I think he could barely afford his first tuition payments.</p>
+    <p>By the time he finally arrived at the University of Utah, his money had gotten so low I think he could barely afford his first tuition payments.</p>
 
-  <p>To support himself, he worked on a poultry farm.</p>
+    <p>To support himself, he worked on a poultry farm.</p>
 
-  <p>He described his hardships: unable to buy regular food, relying on donated eggs from the chickens he raised, making ash from the chicken feed, and living on the farm where he worked.</p>
+    <p>He described his hardships: unable to buy regular food, relying on donated eggs from the chickens he raised, making ash from the chicken feed, and living on the farm where he worked.</p>
 
-  <p>He got to classes by bicycle — something that society looked down upon at the time. He described how drivers, usually in pickup trucks, would yell at him as they drove by, harassing him for riding his bike to school.</p>
+    <p>He got to classes by bicycle — something that society looked down upon at the time. He described how drivers, usually in pickup trucks, would yell at him as they drove by, harassing him for riding his bike to school.</p>
 
-  <p>On his first math test, he was shocked at how poorly he did. From that moment on, he became determined to be the best in his class.</p>
+    <p>On his first math test, he was shocked at how poorly he did. From that moment on, he became determined to be the best in his class.</p>
 
-  <p>He would stay up late after working all day on the farm, keeping his feet in cold water to stay awake while finishing his math assignments.</p>
+    <p>He would stay up late after working all day on the farm, keeping his feet in cold water to stay awake while finishing his math assignments.</p>
 
-  <p>Assignments were due first thing in the morning, and he was proud to say that he graduated at the top of his class.</p>
+    <p>Assignments were due first thing in the morning, and he was proud to say that he graduated at the top of his class.</p>
 
-  <p>After he finished his undergrad, he went to Berkeley for his PhD.</p>
+    <p>After he finished his undergrad, he went to Berkeley for his PhD.</p>
 
-  <p>He described how his work ethic had changed — he was more into extracurricular activities and a little less focused than at Utah.</p>
+    <p>He described how his work ethic had changed — he was more into extracurricular activities and a little less focused than at Utah.</p>
 
-  <p>But his brilliance was unmatched.</p>
+    <p>But his brilliance was unmatched.</p>
 
-  <p>He developed new techniques in science, becoming world-famous for injecting DNA directly into the nucleus of a cell.</p>
+    <p>He developed new techniques in science, becoming world-famous for injecting DNA directly into the nucleus of a cell.</p>
 
-  <p>His PhD was groundbreaking — the discovery of honeybee genetics, specifically how feeding royal jelly to larvae produces queens.</p>
+    <p>His PhD was groundbreaking — the discovery of honeybee genetics, specifically how feeding royal jelly to larvae produces queens.</p>
 
-  <p>Here are some visceral memories of my dad — a scientist and a rebel, like Freeman Dyson.</p>
+    <p>Here are some visceral memories of my dad — a scientist and a rebel, like Freeman Dyson.</p>
 
-  <p>When I was a kid, maybe three or four years old, I asked my dad if it would be okay to eat ants. Being the scientist that he was, wanting to teach me about survival and nutrition, he said people around the world do eat ants — and that it was safe.</p>
+    <p>When I was a kid, maybe three or four years old, I asked my dad if it would be okay to eat ants. Being the scientist that he was, wanting to teach me about survival and nutrition, he said people around the world do eat ants — and that it was safe.</p>
 
-  <p>So when I was in the garden, I tried to eat ants. They were way too acidic. I don't recommend it.</p>
+    <p>So when I was in the garden, I tried to eat ants. They were way too acidic. I don't recommend it.</p>
 
-  <p>He also encouraged me to grow things in the garden — like squash.</p>
+    <p>He also encouraged me to grow things in the garden — like squash.</p>
 
-  <p>I remember Dad singing Persian songs to me.</p>
+    <p>I remember Dad singing Persian songs to me.</p>
 
-  <p>One of them went something like this — a kids' game where you have to raise your hand before the meal when the singer says, "Who wants some bread and cheese?"<br>
-     Tap tap khamir,<br>
-     shishe por panir,<br>
-     dasto ki bala.</p>
+    <p>One of them went something like this — a kids' game where you have to raise your hand before the meal when the singer says, "Who wants some bread and cheese?"<br>
+        Tap tap khamir,<br>
+        shishe por panir,<br>
+        dasto ki bala.</p>
 
-  <p>I remember the feeling of being saved by Dad.</p>
+    <p>I remember the feeling of being saved by Dad.</p>
 
-  <p>When I was crawling under the fence at 55 McLeod — not far from here — I got stuck. After crying for help, Dad came, assessed the situation, got some butter to lubricate my ears, and after about ten minutes of fiddling, he saved me.</p>
+    <p>When I was crawling under the fence at 55 McLeod — not far from here — I got stuck. After crying for help, Dad came, assessed the situation, got some butter to lubricate my ears, and after about ten minutes of fiddling, he saved me.</p>
 
-  <p>It’s one of my earliest memories of Dad.</p>
+    <p>It’s one of my earliest memories of Dad.</p>
 
-  <p>When Dad told me stories about his childhood, he talked about sitting at the korsi — a heated table with a heavy blanket, surrounded by family, eating, studying, doing homework, celebrating nights like Shab-e Yalda — the winter solstice.</p>
+    <p>When Dad told me stories about his childhood, he talked about sitting at the korsi — a heated table with a heavy blanket, surrounded by family, eating, studying, doing homework, celebrating nights like Shab-e Yalda — the winter solstice.</p>
 
-  <p>I remember the smell and sound of adventure, riding with Dad in the Yellow Submarine — his old VW Westfalia camper.</p>
+    <p>I remember the smell and sound of adventure, riding with Dad in the Yellow Submarine — his old VW Westfalia camper.</p>
 
-  <p>Does anyone else remember that thing?</p>
+    <p>Does anyone else remember that thing?</p>
 
-  <p>I remember the smell and taste of fresh peaches we filled the camper with from a government farm. They weren’t allowed to be sold at the market — they were experimental research peaches — but they were absolutely delicious. We ate them all year, because Dad was so resourceful about preserving food.</p>
+    <p>I remember the smell and taste of fresh peaches we filled the camper with from a government farm. They weren’t allowed to be sold at the market — they were experimental research peaches — but they were absolutely delicious. We ate them all year, because Dad was so resourceful about preserving food.</p>
 
-  <p>About the camper — it was a lovely thing he was proud of, though sometimes he did get a little embarrassed showing up at fancy doctor events, where everyone else drove Mercedes. Sometimes it was called the pet-pet machine for the strange sounds it made in a world of modern cars.</p>
+    <p>About the camper — it was a lovely thing he was proud of, though sometimes he did get a little embarrassed showing up at fancy doctor events, where everyone else drove Mercedes. Sometimes it was called the pet-pet machine for the strange sounds it made in a world of modern cars.</p>
 
-  <p>The smell of walnut trees...</p>
+    <p>The smell of walnut trees...</p>
 
-  <p>At his lab — the Ottawa Laboratory at the Central Experimental Farm — he would take me with him in the summers, because childcare was too expensive back then.</p>
+    <p>At his lab — the Ottawa Laboratory at the Central Experimental Farm — he would take me with him in the summers, because childcare was too expensive back then.</p>
 
-  <p>I had access to cutting-edge computers and the internet — in 1994! I would surf strange things, like looking up the inside of a cow’s eyeball, and playing classical computer games.</p>
+    <p>I had access to cutting-edge computers and the internet — in 1994! I would surf strange things, like looking up the inside of a cow’s eyeball, and playing classical computer games.</p>
 
-  <p>At lunchtime, he’d walk with me to the Central Farm, and we’d break walnuts open under the tree with rocks. I can still smell the bitter skins, feel the staining on my fingers. And the walnuts — were delicious.</p>
+    <p>At lunchtime, he’d walk with me to the Central Farm, and we’d break walnuts open under the tree with rocks. I can still smell the bitter skins, feel the staining on my fingers. And the walnuts — were delicious.</p>
 
-  <p>The feeling of being cared for...</p>
+    <p>The feeling of being cared for...</p>
 
-  <p>I remember his hearty Persian soups, stews, and dishes: ash reshteh, abgoosht, gheimeh, fesenjoon, ghormeh sabzi — and they were always delicious.</p>
+    <p>I remember his hearty Persian soups, stews, and dishes: ash reshteh, abgoosht, gheimeh, fesenjoon, ghormeh sabzi — and they were always delicious.</p>
 
-  <p>In a world of fast food, he taught me about natural flavors, good combinations, and good health — something he cared deeply about.</p>
+    <p>In a world of fast food, he taught me about natural flavors, good combinations, and good health — something he cared deeply about.</p>
 
-  <p>Fast forward to just last summer — I struggled to keep up with this 87-year-old man working in the field.</p>
+    <p>Fast forward to just last summer — I struggled to keep up with this 87-year-old man working in the field.</p>
 
-  <p>I often had to take breaks — he was wearing me out! I mentioned my frustration, and later he texted: "I suggest you check your thyroid hormone levels. Most doctors assume all is well with young people."</p>
+    <p>I often had to take breaks — he was wearing me out! I mentioned my frustration, and later he texted: "I suggest you check your thyroid hormone levels. Most doctors assume all is well with young people."</p>
 
-  <p>He was always thinking about how to help.</p>
+    <p>He was always thinking about how to help.</p>
 
-  <p>The feeling of caring for the Earth...</p>
+    <p>The feeling of caring for the Earth...</p>
 
-  <p>In a world of fast fashion, fast food, and hyper-consumerism, Dad produced almost no waste. He didn’t just say he was an environmentalist — he lived it.</p>
+    <p>In a world of fast fashion, fast food, and hyper-consumerism, Dad produced almost no waste. He didn’t just say he was an environmentalist — he lived it.</p>
 
-  <p>He avoided buying foods wrapped in plastic. He composted food scraps with worms — red wrigglers. He rarely bought new clothes, never chasing fashion trends.</p>
+    <p>He avoided buying foods wrapped in plastic. He composted food scraps with worms — red wrigglers. He rarely bought new clothes, never chasing fashion trends.</p>
 
-  <p>If you look at his wardrobe now, the newest item is probably 30 years old. He stuck with classic styles — tweed jackets, Italian suits — and he watched his weight, so he never needed a new wardrobe. (Something I think I should work on myself!)</p>
+    <p>If you look at his wardrobe now, the newest item is probably 30 years old. He stuck with classic styles — tweed jackets, Italian suits — and he watched his weight, so he never needed a new wardrobe. (Something I think I should work on myself!)</p>
 
-  <p>Lastly, I want to talk about his dream — his vision for Golestan Farm.</p>
+    <p>Lastly, I want to talk about his dream — his vision for Golestan Farm.</p>
 
-  <p>He dreamed it would be an extension of his own life — a place where his children and grandchildren could enjoy the orchard. He wanted it to be an eco-hostel — a place where young people could stay and learn about organic farming. He wanted it to outlive him.</p>
+    <p>He dreamed it would be an extension of his own life — a place where his children and grandchildren could enjoy the orchard. He wanted it to be an eco-hostel — a place where young people could stay and learn about organic farming. He wanted it to outlive him.</p>
 
-  <p>He searched long and hard for the perfect place. He chose Portland, Ontario, largely to be close to his best friends, and because it was halfway between Ottawa and Toronto where his kids lived.</p>
+    <p>He searched long and hard for the perfect place. He chose Portland, Ontario, largely to be close to his best friends, and because it was halfway between Ottawa and Toronto where his kids lived.</p>
 
-  <p>He planted many trees — we planted many trees together. Emma even enjoyed planting trees with her grandfather a few years ago. Last year, Dad was proud to see the first mulberries ripening.</p>
+    <p>He planted many trees — we planted many trees together. Emma even enjoyed planting trees with her grandfather a few years ago. Last year, Dad was proud to see the first mulberries ripening.</p>
 
-  <p>We will continue that vision — growing food, welcoming friends, keeping his spirit alive in the land he loved.</p>
+    <p>We will continue that vision — growing food, welcoming friends, keeping his spirit alive in the land he loved.</p>
 
-  <p>Please feel free to stop by Golestan Farm on Highway 15. Everyone is welcome who wants to learn about organic farming and a sustainable way of life.</p>
+    <p>Please feel free to stop by Golestan Farm on Highway 15. Everyone is welcome who wants to learn about organic farming and a sustainable way of life.</p>
 
-  <p>Thank you for coming today. I look forward to hearing your stories about my dad.</p>
-</div>
-
+    <p>Thank you for coming today. I look forward to hearing your stories about my dad.</p>
+    </div>
       
-<div class="section" id="shohr">
-  <h2>Speech by Shohre Mahdi</h2>
-  <h3>Kindness, Wisdom &amp; Scientific Humanity</h3>
+    <div class="section" id="shohr">
+    <h2>Speech by Shohre Mahdi</h2>
+    <h3>Kindness, Wisdom &amp; Scientific Humanity</h3>
 
-  <h4>Introduction &amp; Shock</h4>
-  <p>My name is <strong>Shohre Mahdi</strong> from the Shenakht Association. It is a privilege to speak to Dr. Sabour’s family, friends, and colleagues today. His sudden passing was a profound shock to us all—he had touched each of our lives with his thoughtfulness and generosity.</p>
+    <h4>Introduction &amp; Shock</h4>
+    <p>My name is <strong>Shohre Mahdi</strong> from the Shenakht Association. It is a privilege to speak to Dr. Sabour’s family, friends, and colleagues today. His sudden passing was a profound shock to us all—he had touched each of our lives with his thoughtfulness and generosity.</p>
 
-  <h4>Mission &amp; Vision</h4>
-  <p>Dr. Sabour’s mission and vision shone through his remarkable education, his work as a dedicated professor, his groundbreaking research in genetics, and his engaging presentations to both academic and public audiences. He demonstrated limitless love for his children and goddaughter, and his scientific mind amplified his innate kindness.</p>
+    <h4>Mission &amp; Vision</h4>
+    <p>Dr. Sabour’s mission and vision shone through his remarkable education, his work as a dedicated professor, his groundbreaking research in genetics, and his engaging presentations to both academic and public audiences. He demonstrated limitless love for his children and goddaughter, and his scientific mind amplified his innate kindness.</p>
 
-  <h4>Non‑Judgmental Generosity</h4>
-  <p>He spoke about life experiences without judgment and offered a helping hand whenever and wherever needed. These admirable traits—rooted in his scientific curiosity—made him a beacon of support and inspiration.</p>
+    <h4>Non‑Judgmental Generosity</h4>
+    <p>He spoke about life experiences without judgment and offered a helping hand whenever and wherever needed. These admirable traits—rooted in his scientific curiosity—made him a beacon of support and inspiration.</p>
 
-  <h4>Testimony from Colleagues</h4>
-  <p>Although time is limited, I must convey Mr. Kashani’s admiration for Dr. Sabour’s ability to weave humanistic messages into his scientific work. I also quote Mr. Asrani verbatim:</p>
-  <blockquote>
-    <p>“His dedication to knowledge was not confined to the classroom or to the labs.”</p>
-  </blockquote>
+    <h4>Testimony from Colleagues</h4>
+    <p>Although time is limited, I must convey Mr. Kashani’s admiration for Dr. Sabour’s ability to weave humanistic messages into his scientific work. I also quote Mr. Asrani verbatim:</p>
+    <blockquote>
+        <p>“His dedication to knowledge was not confined to the classroom or to the labs.”</p>
+    </blockquote>
 
-  <h4>Closing &amp; Persian Verse</h4>
-  <p>Dear Dr. Sabour, you are deeply missed and will remain in our hearts and thoughts for a long time. To Azadeh, Arash, Camron, and Fiona—you have our love and respect.</p>
+    <h4>Closing &amp; Persian Verse</h4>
+    <p>Dear Dr. Sabour, you are deeply missed and will remain in our hearts and thoughts for a long time. To Azadeh, Arash, Camron, and Fiona—you have our love and respect.</p>
 
-  <blockquote>
-    <p>آقای دکتر پرویز صبور، دانشمند ایرانی و دوست عزیزمان درگذشت، اما او در دل و ذهنمان زنده خواهد ماند.</p>
-  </blockquote>
+    <blockquote>
+        <p>آقای دکتر پرویز صبور، دانشمند ایرانی و دوست عزیزمان درگذشت، اما او در دل و ذهنمان زنده خواهد ماند.</p>
+    </blockquote>
 
-  <p><strong>Thank you,</strong><br>
-     Shohre Mahdi<br>
-     Shenakht Association</p>
-</div>
-
+    <p><strong>Thank you,</strong><br>
+        Shohre Mahdi<br>
+        Shenakht Association</p>
+    </div>
   
+    <div class="section" id="azadeh">
+        <h2>Eulogy by Azadeh Sabour</h2>
+        <h3>Eulogy for Dr. Parviz Mohammad Sabour, by Azadeh Sabour</h3>
+      
+        <p>My father was just a few days shy of his 89th birthday when he drew his last breath. We used to joke that Parviz had nine lives, because he escaped death so many times throughout his life. It’s still truly hard to believe that he’s gone in an instant. I miss him very much.</p>
+      
+        <p>He was so vibrant and busy—living life on his own terms, with so much determination, right up to his final days. He was baking bread and making stews, germinating seeds in his greenhouse to plant at his farm, and planning his latest trip to Iran, his home country, which he loved so much. He was developing research proposals with other scientists, funding lab research, and still giving scientific lectures, to name just a few of his passions.</p>
+      
+        <p>There are moments when grief overwhelms me. I’ve spent hours at his home, surrounded by photographs and mementos, reading your kind messages, and marveling at the stories and pictures you’ve shared.</p>
+      
+        <p>I am deeply grateful for each memory and message—from friends, family, and colleagues around the world. My brothers and I are blessed by our mother’s loving support, by friends helping us plan this celebration, by my husband Chris’s beautiful photo reels, and by family and friends joining us from afar. With all of you, we are weaving a tapestry of our father’s life. Day by day, I am climbing upward and forward, discovering the beauty in his vibrant, remarkable story.</p>
+      
+        <p>Today, I want to share that story with you. And as I do, I hope you’ll imagine him here—our professor—correcting my details, going off on tangents, smiling his biggest smile, and sharing his deep, joyful laugh.</p>
+      
+        <p>My father was born Mohammad Sabour in April 1936, the youngest of three brothers, in Nowbahar (now the bustling city of Mashhad), Khorasan, northeastern Iran.</p>
+      
+        <p>Those early years were unimaginably hard. My father’s mother loved her children so deeply, but the hardships of life meant she was unable to care for her three sons on her own. The boys were sent to live with relatives in Tehran. My father, still a baby, was adopted by a prominent judge and his wife who named him Parviz and raised him through adolescence. That family had a son, Farzad, who now lives in Frankfurt and remained close to my father. Parviz also stayed close with his birth mother and brothers—his eldest brother Hussein passed away in the 1980s, while Ali Asghar, now in his nineties, lives in Montreal.</p>
+      
+        <p>Life in Tehran was also hard. He was three at the start of World War II, and five when British and Soviet forces—with help from the U.S.—invaded and occupied Iran in 1941. Combined with a poor harvest, this led to a devastating famine between 1942 and 1944.</p>
+      
+        <p>In the post-war rebuilding of the 1950s and ’60s, Iran received international assistance—from USAID and the U.N. Food and Agriculture Organization—to improve agricultural practices and education. This support would go on to shape my father’s life.</p>
+      
+        <p>At 19, he completed a diploma at the Agricultural Teachers Training School in Varāmīn, preparing educators to advance rural development. He excelled academically, soon becoming Farm Manager at an experimental vegetable and poultry farm, then Agriculture and Poultry Specialist at the Ministry of Agriculture in Rasht.</p>
+      
+        <p>His success earned him a place at Utah State University, where he earned a B.Sc. in Zoology in 1963, and then at the University of California, Berkeley, where he completed a Ph.D. in Genetics. Berkeley in the 1960s was alive with progressive politics, civil rights, and the anti-Vietnam War movement—my father was passionately anti-war and documented many protests with his camera.</p>
+      
+        <p>He formed lifelong friendships there—among them Dale Whiteside, a Canadian lab researcher learning Farsi. They traveled together to Iran in 1969, and Dale later joined Canada’s foreign service. Their bond, and her family’s kindness, would eventually help us flee the 1979 Revolution and Iraqi invasion, first to Cairo, then to Canada.</p>
+      
+        <p>In January 1974, Parviz married my mother, Nahid, and our family soon grew with my brother Arash and me. He co-founded the Institute of Biophysics and Biochemistry at the University of Tehran, training many future scientists. After the Revolution, we escaped to Canada, where he joined Agriculture & Agri-Food Canada and taught at universities including Ottawa, Carleton, Guelph, Purdue, and Harvard.</p>
+      
+        <p>He published over 190 papers, gave hundreds of lectures worldwide, and was a founding member of Phage Canada—but to us, he was “Professor of Love,” teaching us about yogurts, kefir, ginger tea, backgammon, gardens, and the cosmic wonders of a blackout night sky.</p>
+      
+        <p>Hours after his sudden death, my brother Camron and I walked his beloved farm and found retro gadgets, cameras, and even an astronaut’s exercise machine—each a story, each a lesson, each delivered with that gleam in his eye.</p>
+      
+        <p>I will hold onto his story, his love, and his lessons. When I hear Maria Callas, drink my kefir, water his plants, or smell his hats, he’s with me. My family and I thank you all for joining us today to celebrate his remarkable life.</p>
+    </div>
   </div>
 
   <script>
@@ -615,22 +666,17 @@ Email Phage.Canada@gmail.com
       const links = document.querySelectorAll('nav a');
       const sections = document.querySelectorAll('.section');
       function showSection(id) {
-        sections.forEach(sec => sec.classList.toggle('active', sec.id === id));
-        links.forEach(link => link.classList.toggle('active', link.getAttribute('data-section') === id));
+        sections.forEach(s => s.classList.toggle('active', s.id === id));
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('data-section') === id));
       }
-      links.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          showSection(link.getAttribute('data-section'));
-        });
-      });
-      if (links.length > 0) showSection(links[0].getAttribute('data-section'));
+      links.forEach(link => link.addEventListener('click', e => {
+        e.preventDefault();
+        showSection(link.getAttribute('data-section'));
+      }));
+      if (links.length) showSection(links[0].getAttribute('data-section'));
     });
   </script>
 
-  <footer>
-    Website lovingly created in memory of Parviz Mohammad Sabour. Hosted on GitHub Pages.
-  </footer>
 
 </body>
 </html>
