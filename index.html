@@ -18,21 +18,44 @@
       padding: 1rem;
       text-align: center;
     }
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    header nav ul li {
+      margin: 0 0.5rem;
+    }
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      background: #444;
+    }
+    header nav ul li a.active,
+    header nav ul li a:hover {
+      background: #666;
+    }
     iframe {
       display: block;
       margin: 1rem auto;
       max-width: 90%;
     }
     .content {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 1.5rem;
       background: #fff;
       border-radius: 8px;
+      min-height: 400px;
     }
-    h1 {
-      margin-top: 0;
-    }
+    .section { display: none; }
+    .section.active { display: block; }
+    h2 { margin-top: 0; }
     footer {
       text-align: center;
       padding: 1rem;
@@ -45,24 +68,130 @@
 
   <header>
     <h1>In Loving Memory of Dr. Parviz Mohammad Sabour</h1>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/IilY6NYCCBg" 
-      title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    <nav>
+      <ul>
+        <li><a href="#" data-section="azadeh">Azadeh Sabour</a></li>
+        <li><a href="#" data-section="fiona">Fiona McKean</a></li>
+        <li><a href="#" data-section="poetry">Poetry Reading</a></li>
+        <li><a href="#" data-section="lucie">Dean Lucie Thibault</a></li>
+        <li><a href="#" data-section="greg">Dr. Greg German</a></li>
+        <li><a href="#" data-section="krista">Dr. Krista Power</a></li>
+        <li><a href="#" data-section="roya">Dr. Roya Riazi</a></li>
+        <li><a href="#" data-section="susan">Dr. Susan Tosh</a></li>
+        <li><a href="#" data-section="mehran">Mehran Mohaghegh</a></li>
+        <li><a href="#" data-section="shohr">Shohre Mahdi</a></li>
+      </ul>
+    </nav>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/IilY6NYCCBg" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   </header>
 
   <div class="content">
-    <p>
-      Dr. Parviz Mohammad Sabour (1936–2025) was a pioneering geneticist, a devoted educator, and a beloved father and friend. Born in Mashhad, Iran, his life journey took him from rural villages and war-torn streets to world-renowned universities, where he shaped minds and advanced science. He held a PhD from UC Berkeley and was among the founders of the Institute of Biophysics and Biochemistry at the University of Tehran.
-    </p>
-    <p>
-      Following the 1979 Iranian Revolution, Parviz immigrated to Canada, where he continued his scientific work at Agriculture and Agri-Food Canada, as well as universities including Ottawa, Carleton, Guelph, and Harvard. He published over 190 scientific papers and was deeply involved in promoting Iranian-Canadian scientific collaboration. He inspired students with his passion for molecular biology, virology, and the gut microbiome, always emphasizing the connection between science, food, and health.
-    </p>
-    <p>
-      Beyond science, Parviz was a lover of Persian poetry, classical music, and gardening. He believed in living with curiosity and purpose, often gifting plants he nurtured from seed and offering health advice laced with humor and wisdom. He was a storyteller, a teacher, a mentor, and above all, a man of deep integrity and love. He was known to counsel friends and family alike to drink kefir, make their own ginger tea, and observe life’s wonders, even in a spoonful of yogurt.
-    </p>
-    <p>
-      His warmth and intellect left an indelible mark on all who knew him. As remembered by family and friends, he was “a Professor of Love”—a man whose legacy is not just in academic contributions, but in the way he cared, taught, and uplifted those around him. Today and always, we remember Parviz not just for what he accomplished, but for who he was: kind, brilliant, generous, and full of life.
-    </p>
+
+    <div class="section" id="azadeh">
+      <h2>Eulogy by Azadeh Sabour</h2>
+      <p>My father was just a few days shy of his 89th birthday when he drew his last breath. We used to joke that Parviz had nine lives, because he escaped death so many times throughout his life. It’s still truly hard to believe that he’s gone. In an instant. I miss him very much.</p>
+      <p>He was so vibrant and busy, lived life on his own terms, with so much determination, right up to his final days. He was baking bread and making stews, germinating seeds in his greenhouse to plant at his farm, and planning his latest trip to Iran, his home country, which he loved so much. He was developing research proposals with other scientists, funding lab research, and still giving scientific lectures, to name a few.</p>
+      <p>There are moments when grief overwhelms me. I’ve spent hours at his home, surrounded by photographs and mementos, reading your kind messages, and marveling at the stories and pictures you’ve shared.</p>
+      <p>I am deeply grateful for each memory and message—from friends, family, and colleagues around the world. My brothers and I are blessed by our mother’s loving support, by friends helping us plan this celebration, by my husband Chris’s beautiful photo reels, and by family and friends joining us from afar. With all of you, we are weaving a tapestry of our father’s life. Day by day, I am climbing upward and forward, discovering the beauty in his vibrant, remarkable story.</p>
+      <p>Today, I want to share that story with you. And as I do, I hope you’ll imagine him here – our professor - correcting my details, going off on tangents, smiling his biggest smile, and sharing his deep, joyful laugh.</p>
+      <p>My father was born Mohammad Sabour in April 1936, the youngest of three brothers. He entered the world in Nowbahar, a village which has since become the bustling city of Mashhad, in Khorasan, northeastern Iran.</p>
+      <p>Those early years were unimaginably hard. My father’s mother loved her children so deeply, but the hardships of life meant she was unable to care for her three sons on her own...</p>
+      <!-- Full eulogy content continues here -->
+    </div>
+
+    <div class="section" id="fiona">
+      <h2>Tribute by Fiona McKean</h2>
+      <p>What I will miss most about Parviz is his voice. If you close your eyes and really listen, I’m sure you can hear him:</p>
+      <ul>
+        <li>He’s telling you to put high-fat plain yogurt on that skin condition you’ve been ignoring.</li>
+        <li>He’s explaining how phages kill viruses without harming other cells.</li>
+        <li>He’s telling you to make your own ginger tea instead of buying the packets because really, Fiona, you’re losing most of the benefit once it’s in a mass-produced pack (fine! I’ll make my own ginger tea, Amu).</li>
+        <li>He’s showing you how to make the best bread you’ve ever tasted.</li>
+        <li>He’s telling your teenaged self to think from first principles and not follow blindly.</li>
+        <li>He’s sharing the story, for the 500th time, about sailing to America and ending up at university in Utah living with a Mormon family and raising chickens for 25 cents an hour. Even in repetition, it’s still funny.</li>
+        <li>He’s telling you that he loves you. He was so open with his love.</li>
+      </ul>
+      <p>Love of life, love of humanity, love of curiosity. He was a Professor of love.</p>
+      <blockquote>
+        <p>What a lovely voice, <br>
+           Teaching us of life<br>
+           Biology, virology, a history of strife.<br>
+           Wondrous, ponderous <br>
+           Calm and filled with resonance<br>
+           A Professor of Love eternal.</p>
+      </blockquote>
+    </div>
+
+    <div class="section" id="poetry">
+      <h2>Poetry Reading by Sepand Siassi &amp; Meghan Hanley</h2>
+      <p><strong>Introduction to Persian Poetry:</strong><br>
+      Sepand: My name is Sepand Siassi. My parents, Dr. Fereydoun Siassi and Shahed Amiri have been very close friends with Parviz since the early 70s...</p>
+      <!-- Continue with full poetry reading content -->
+    </div>
+
+    <div class="section" id="lucie">
+      <h2>Speech by Dean Lucie Thibault</h2>
+      <p>At the University of Ottawa, we share Parviz's passion for understanding the role of the gut microbiome in health and in mental health in particular...</p>
+      <!-- Continue speech content -->
+    </div>
+
+    <div class="section" id="greg">
+      <h2>Speech by Dr. Greg German</h2>
+      <p>Good afternoon, I am Dr. Greg German Cofounder of Phage Canada, Physician and Professor of Bacteriophage Therapy at the University of Toronto...</p>
+      <!-- Continue speech content -->
+    </div>
+
+    <div class="section" id="krista">
+      <h2>Speech by Dr. Krista Power</h2>
+      <p>Hello everyone, my name is Krista Power, and I’m joined today by Dean Lucie Thibault from the Faculty of Health Sciences at the University of Ottawa...</p>
+      <!-- Continue speech content -->
+    </div>
+
+    <div class="section" id="roya">
+      <h2>Speech by Dr. Roya Riazi</h2>
+      <p>Dr Sabour Celebration of Life<br>
+      باور نمی کند دل من مرگ دوست را...</p>
+      <!-- Continue speech content -->
+    </div>
+
+    <div class="section" id="susan">
+      <h2>Speech by Dr. Susan Tosh</h2>
+      <p>Memorial for Parviz Sabour<br>
+      Hello, I am Susan Tosh. I recently retired from the University of Ottawa...</p>
+      <!-- Continue speech content -->
+    </div>
+
+    <div class="section" id="mehran">
+      <h2>Speech by Mehran Mohaghegh</h2>
+      <p>My name is Mehran Mohaghegh. As a board member, I am here on behalf of the Association of Iranian Engineers and Architects in Canada...</p>
+      <!-- Continue speech content -->
+    </div>
+
+    <div class="section" id="shohr">
+      <h2>Speech by Shohre Mahdi</h2>
+      <p>My name is Shohre Mahdi From Shenakht Association. It is a privilege for me to speak to Dear Dr. Sabour's family, friends, and colleagues today...</p>
+      <!-- Continue speech content -->
+    </div>
+
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a');
+      const sections = document.querySelectorAll('.section');
+      function showSection(id) {
+        sections.forEach(sec => sec.classList.toggle('active', sec.id === id));
+        links.forEach(link => link.classList.toggle('active', link.getAttribute('data-section') === id));
+      }
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          showSection(link.getAttribute('data-section'));
+        });
+      });
+      if (links.length > 0) showSection(links[0].getAttribute('data-section'));
+    });
+  </script>
 
   <footer>
     Website lovingly created in memory of Parviz Mohammad Sabour. Hosted on GitHub Pages.
