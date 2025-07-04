@@ -57,6 +57,7 @@
       border-radius: 8px;
       min-height: 400px;
     }
+    
     .section {
       display: none;
     }
@@ -71,6 +72,12 @@
       break-inside: avoid-column;
       -webkit-column-break-inside: avoid;
       -moz-column-break-inside: avoid;
+    }
+
+    /* Override: only one column when the id contains “kudo-board” or “slideshow” */
+    .section.active[id*="kudo-board"],
+    .section.active[id*="slideshow"] {
+      column-count: 1;
     }
     h2 {
       margin-top: 0;
@@ -96,9 +103,9 @@
         <h1>In Loving Memory of Dr. Parviz Mohammad Sabour</h1>
         <nav>
           <ul>
-            <li><a href="#" data-section="slideshow">View Slideshow</a></li>
-            <li><a href="https://www.kudoboard.com/boards/Zk6PNR5v" data-section ="kudo-board" target="_blank" >View Gallery></a></li>
             <li><a href="#" data-section="obituary">Obituary</a></li>
+            <li><a href="#" data-section="slideshow">View Slideshow</a></li>
+            <li><a href="#" data-section="kudo-board">View Gallery</a></li>
             <li><a href="#" data-section="azadeh">Azadeh Sabour</a></li>
             <li><a href="#" data-section="fiona">Fiona McKean</a></li>
             <li><a href="#" data-section="camron">Camron Sabour</a></li>
@@ -120,7 +127,7 @@
 
     <div class="section" id="obituary">
       <h2>Dr. Parviz Mohammad Sabour - Our Father, Friend, and Teacher</h2>
-      <img src="https://github.com/Camr0n/pariviz-memorial/blob/main/Center%20-%20Single%20Photo.no%20poem.webp"></img>
+      <img src="https://raw.githubusercontent.com/Camr0n/pariviz-memorial/refs/heads/main/Center%20-%20Single%20Photo.no%20poem.webp" style="max-width:600px; width:100%; display:block; margin: 0 auto;">
       <p>
         It is with the heaviest of hearts that we share with you the sad news that Dr. Parviz Mohammad Sabour peacefully took his last breath at 12:30 am EST on April 1, 2025, at a small rural hospital in Smiths Falls, Ontario, just 30 minutes away from his farm.
       </p>
@@ -167,12 +174,8 @@
       <p>
         Azadeh, Arash, Camron 
       </p>
-      
-        
+      </div>
 
-
-image.p
-      </p>
 <div class="section" >
   <div style="text-align: center; margin-bottom: 1em;">
     <img src="https://raw.githubusercontent.com/Camr0n/pariviz-memorial/main/mohandes-logo.png" alt="Mohandes Logo" style="max-width: 150px;">
@@ -209,8 +212,21 @@ image.p
 </div>
 
       
+<div class="section" id="kudo-board">
+  
+  <iframe
+  src="https://www.kudoboard.com/boards/Zk6PNR5v/embed"
+  height="1600px"
+  width="100%"
+  style="border:none"
+  allowfullscreen
+  sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+></iframe>
+
+</div>
+
     <div class="section" id="slideshow">
-      <iframe width="543" height="480" src="https://www.youtube.com/embed/GunvzRUI__w" title="Parviz Sabour Memorial Slide Show 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
+      <iframe width="600" height="480" src="https://www.youtube.com/embed/GunvzRUI__w" title="Parviz Sabour Memorial Slide Show 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
     </div>
       
     <div class="section" id="kropinski">
@@ -728,7 +744,7 @@ image.p
       
         <p>I will hold onto his story, his love, and his lessons. When I hear Maria Callas, drink my kefir, water his plants, or smell his hats, he’s with me. My family and I thank you all for joining us today to celebrate his remarkable life.</p>
     </div>
-  </div>
+    </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
