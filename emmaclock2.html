@@ -7,10 +7,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            font-size: 50px;
+            font-size: 250px;
             margin: 0;
             padding: 0;
-
+            background-color: 000000;
+            color: #ffffff;
             /* Center clock on screen */
             display: flex;
             justify-content: center;
@@ -32,7 +33,9 @@
         <div id="minutes">00</div>
         <div id="ampm">AM</div>
     </div>
-
+    <div id="image">
+        <img src="clockimage.jfif" />
+    </div>
     <script>
         function updateClock() {
             const now = new Date();
